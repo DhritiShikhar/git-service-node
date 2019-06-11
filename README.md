@@ -1,7 +1,7 @@
 ### Installation 
 
-npm install
+```npm install```
 
 ### Dev mode
 
-npm start
+```npm start```
