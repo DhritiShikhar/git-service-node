@@ -22,6 +22,18 @@ export default class BitbucketService extends BaseService {
         }
     }
 
+    async getRepoBranchList() {
+        const metadata = this.getRepoMetadata();
+        try {
+            const resp = await this.client.refs.listBranches({
+                repo_slug: metadata.repoName,
+                username: metadata.owner
+            })
+            return resp;
+        }catch (e) {
+            throw e;
+        }
+    }
 
     getRepoMetadata() {
         const metadata = parseBitbucketUrl(this.gitsource.url)

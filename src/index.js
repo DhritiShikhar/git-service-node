@@ -3,11 +3,11 @@ import BitbucketService from './service/bitbucket_service'
 import GitSource, { SecretType } from './service/modal/gitsource'
 
 const gr = new GitSource(
-    "https://bitbucket.org/siminsights/cts-web-app",
+    "https://akshinde@bitbucket.org/akshinde/testgitsource.git",
     SecretType.NO_AUTH
 )
 
 const gs = new BitbucketService(gr)
-gs.isRepoReachable()
-    .then(r => console.log("Is Reachable ", r))
+gs.getRepoBranchList()
+    .then(r => console.log("Is Reachable ", r.data.values))
     .catch(err => console.log("Is not reachable", err))

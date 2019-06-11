@@ -1,5 +1,5 @@
 {
-  "name": "node-es6-boilerplate",
+  "name": "git-service-node",
   "version": "0.0.1",
   "description": "Boilerplate for Node.js projects with lint, transpile and test configurations",
   "main": "./build/index.js",
@@ -23,12 +23,12 @@
     "mocha",
     "lint"
   ],
-  "author": "Harsha Alva",
+  "author": "Akash Shinde",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aharshac/node-es6-boilerplate/issues"
+    "url": "https://github.com/akashshinde/git-service-node/issues"
   },
-  "homepage": "https://github.com/aharshac/node-es6-boilerplate#readme",
+  "homepage": "https://github.com/akashshinde/git-service-node#readme",
   "dependencies": {
     "@octokit/rest": "^16.27.3",
     "bitbucket": "^1.15.0",

@@ -2,8 +2,6 @@ import BaseService from './base_service'
 import Octokit from '@octokit/rest'
 import GitUrlParse from 'git-url-parse'
 import RepoMetadata from './modal/repo_metadata'
-import { Gitlab } from 'gitlab'
-import Bitbucket from 'bitbucket'
 
 export default class GithubService extends BaseService {
     constructor(gitsource) {
@@ -17,6 +15,19 @@ export default class GithubService extends BaseService {
             const resp = await this.client.repos.get({
                 owner: metadata.owner,
                 repo: metadata.repoName,
+            })
+            return resp;
+        }catch (e) {
+            throw e;
+        }
+    }
+
+    async getRepoBranchList() {
+        const metadata = this.getRepoMetadata();
+        try {
+            const resp = await this.client.repos.listBranches({
+                owner: metadata.owner,
+                repo: metadata.repoName
             })
             return resp;
         }catch (e) {
