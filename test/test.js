@@ -45,7 +45,7 @@ describe(pkg.name, function() {
           })
   })
 
-    it('should return ok on existing public github repo', (done) => {
+    it('should list all branches of existing public github repo', (done) => {
         const gr = new GitSource(
             "https://github.com/redhat-developer/devconsole-git",
             SecretType.NO_AUTH
