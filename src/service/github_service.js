@@ -20,7 +20,7 @@ export default class GithubService extends BaseService {
             })
             return resp;
         }catch (e) {
-            console.log(e)
+            throw e;
         }
     }
 
